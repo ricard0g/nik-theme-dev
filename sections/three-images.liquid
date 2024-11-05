@@ -1,5 +1,4 @@
 <section>
-    <h1>Hola</h1>
     <div class="three-images-wrapper">
         {% if section.settings.image-one != blank %}
             <div class="image-one-container">
@@ -12,7 +11,7 @@
         {% endif %}
         {% if section.settings.image-two != blank %}
             <div class="image-two-container">
-                <img width="400" height="120" src="{{ section.settings.image-two | image_url }}" />
+                <img width="900" height="120" src="{{ section.settings.image-two | image_url }}" />
             </div>
         {% else %}
             <div class="image-two-container">
@@ -53,6 +52,11 @@
             "label": "Third Image",
             "info": "400 x 120px .png recommended"
             },
+        ],
+        "presets": [
+            {
+            "name": "three-images"
+            }
         ]
     }
 {% endschema %}

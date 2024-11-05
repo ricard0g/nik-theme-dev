@@ -75,3 +75,8 @@ body {
     border-radius: 10px;
     margin-top: 8px;
 }
+
+/* Three Images */
+.three-images-wrapper {
+	display: flex;
+}
