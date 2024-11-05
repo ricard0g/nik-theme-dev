@@ -2,29 +2,29 @@
     <div class="three-images-wrapper">
         {% if section.settings.image-one != blank %}
             <div class="image-one-container">
-                <img width="400" height="120" src="{{ section.settings.image-one | image_url }}" />
+                <img width="100%" height="100%" src="{{ section.settings.image-one | image_url }}" />
             </div>
         {% else %}
             <div class="image-one-container">
-                <img width="400" height="120" src="{{ 'one.png' | asset_url }}" />
+                <img width="100%" height="100%" src="{{ 'one.png' | asset_url }}" />
             </div>
         {% endif %}
         {% if section.settings.image-two != blank %}
             <div class="image-two-container">
-                <img width="900" height="120" src="{{ section.settings.image-two | image_url }}" />
+                <img width="100%" height="100%" src="{{ section.settings.image-two | image_url }}" />
             </div>
         {% else %}
             <div class="image-two-container">
-                <img width="400" height="120" src="{{ 'two.png' | asset_url }}" />
+                <img width="100%" height="100%" src="{{ 'two.png' | asset_url }}" />
             </div>
         {% endif %}
         {% if section.settings.image-three != blank %}
             <div class="image-three-container">
-                <img width="400" height="120" src="{{ section.settings.image-three | image_url }}" />
+                <img width="100%" height="100%" src="{{ section.settings.image-three | image_url }}" />
             </div>
         {% else %}
             <div class="image-three-container">
-                <img width="400" height="120" src="{{ 'three.png' | asset_url }}" />
+                <img width="100%" height="100%" src="{{ 'three.png' | asset_url }}" />
             </div>
         {% endif %}
     </div>

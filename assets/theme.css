@@ -78,5 +78,16 @@ body {
 
 /* Three Images */
 .three-images-wrapper {
-	display: flex;
+	display: grid;
+	grid: auto-flow / repeat(3, 1fr);
+	place-items: center;
+	width: 100vw;
+	height: 75vh;
+}
+
+.image-one-container img, .image-two-container img, .image-three-container img {
+	object-fit: cover;
+	object-position: center;
+	max-width: 100%;
+	display: block;
 }
