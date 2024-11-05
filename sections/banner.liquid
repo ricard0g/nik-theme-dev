@@ -14,10 +14,11 @@
 
 <style>
   .banner-wrapper {
-    position: relative;
+    position: absolute;
+    top: 120px;
     width: 100%;
     height: 5vh;
-    background-color: {{ section.settings.background-color }};
+    background-color: {{ section.settings.background-color | append: "D9" }};
     color: {{ section.settings.text-color }};
   }
 
