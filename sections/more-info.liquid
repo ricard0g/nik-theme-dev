@@ -1,0 +1,54 @@
+<section>
+    {% if section.settings.heading != blank %}
+        <h1>{{ section.settings.heading }}</h1>
+    {% else  %}
+        <h1>The Resolution Starter Pack</h1>
+    {% endif %}
+    {% if section.settings.text != blank %}
+        <p>{{ section.settings.text }}</p>
+    {% else %}
+        <p>Go for all your fitness goals with a curated collection of new styles.</p>
+    {% endif %}
+    <button>Shop</button>
+</section>
+
+<style>
+    
+</style>
+
+{% schema %}
+{
+  "name": "more-info",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background-color",
+      "label": "Background Color",
+      "default": "#F4F4F4"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading Text",
+      "default": "Title"
+    },
+    {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Default Text",
+    },
+  ],
+  "presets": [
+    {
+      "name": "More Info"
+    }
+  ]
+}
+{% endschema %}
