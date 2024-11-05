@@ -1,0 +1,58 @@
+<section>
+    <h1>Hola</h1>
+    <div class="three-images-wrapper">
+        {% if section.settings.image-one != blank %}
+            <div class="image-one-container">
+                <img width="400" height="120" src="{{ section.settings.image-one | image_url }}" />
+            </div>
+        {% else %}
+            <div class="image-one-container">
+                <img width="400" height="120" src="{{ 'one.png' | asset_url }}" />
+            </div>
+        {% endif %}
+        {% if section.settings.image-two != blank %}
+            <div class="image-two-container">
+                <img width="400" height="120" src="{{ section.settings.image-two | image_url }}" />
+            </div>
+        {% else %}
+            <div class="image-two-container">
+                <img width="400" height="120" src="{{ 'two.png' | asset_url }}" />
+            </div>
+        {% endif %}
+        {% if section.settings.image-three != blank %}
+            <div class="image-three-container">
+                <img width="400" height="120" src="{{ section.settings.image-three | image_url }}" />
+            </div>
+        {% else %}
+            <div class="image-three-container">
+                <img width="400" height="120" src="{{ 'three.png' | asset_url }}" />
+            </div>
+        {% endif %}
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Three Images",
+        "settings": [
+            {
+            "type": "image_picker",
+            "id": "image-one",
+            "label": "First Image",
+            "info": "400 x 120px .png recommended"
+            },
+            {
+            "type": "image_picker",
+            "id": "image-two",
+            "label": "Second Image",
+            "info": "400 x 120px .png recommended"
+            },
+            {
+            "type": "image_picker",
+            "id": "image-three",
+            "label": "Third Image",
+            "info": "400 x 120px .png recommended"
+            },
+        ]
+    }
+{% endschema %}
