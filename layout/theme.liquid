@@ -1,16 +1,17 @@
 <html>
-    <head>
-        {{ content_for_header }}
-        <title>Nik Store</title>
-        {{ "theme.css" | asset_url | stylesheet_tag }}
-    </head>
-    <body>
-        <header>
-            {% section 'announcement-bar' %}
-            {% section 'header' %}
-        </header>
-        <main>
-            {{ content_for_layout }}
-        </main>
-    </body>
+  <head>
+    {{ content_for_header }}
+    <title>Nik Store</title>
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    <header>
+      {% section 'announcement-bar' %}
+      {% section 'header' %}
+    </header>
+    <main>
+      {{ content_for_layout }}
+    </main>
+    {% section 'footer' %}
+  </body>
 </html>
