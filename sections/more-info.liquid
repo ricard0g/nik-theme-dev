@@ -17,7 +17,11 @@
         text-align: center;
         background-color: {{ section.settings.background-color }};
         color: {{ section.settings.text_color }}
-    }
+      }
+
+      .more-info-container h1 {
+        font-size: 3.125rem;
+      }
 
     .more-info-container button {
         padding: 1vh 2vw;
@@ -28,6 +32,11 @@
         color: #F4F4F4;
         cursor: pointer;
     }
+
+    .more-info-container button:hover {
+      background-color: rgb(100, 100, 100);
+    }
+
 </style>
 
 {% schema %}

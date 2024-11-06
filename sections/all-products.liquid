@@ -1,0 +1,63 @@
+<section class="all-products-container">
+  <h2>{{ collections['summer-collection'].title | replace: '-', ' ' | capitalize }}</h2>
+  <div class="products-wrapper">
+    {% for product in collections['summer-collection'].products %}
+      <div class="product-card">
+        <div class="image-product-container">
+          <img width="300" height="auto" loading="lazy" src="{{ product.featured_image | image_url }}">
+        </div>
+        <h5>{{ product.title | link_to: product.url }}</h5>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .products-wrapper {
+    display: flex;
+    overflow-x: scroll;
+    transition: transform 0.3s ease;
+  }
+
+  .product-card {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .product-card h5 a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .product-card h5 a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "all-products",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "All Products"
+    }
+  ]
+}
+{% endschema %}
