@@ -1,0 +1,53 @@
+{% paginate collection.products by 4 %}
+  <section class="collection-sec">
+    <div>
+      <select id="sort-by">
+        {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+        {% for option in collection.sort_options %}
+          <option
+            value="{{ option.value }}"
+            {% if option.value == sort_by %}
+              selected="selected"
+            {% endif %}
+          >
+            {{ option.name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <div>
+      <h1>Collections</h1>
+      <p>{{ collection.title }}</p>
+      <div class="products-grid">
+        {% for product in collection.products %}
+          <div class="product-card">
+            <img width="100%" height="auto" loading="lazy" src="{{ product.featured_image | image_url }}">
+            <h3>{{- product.title | link_to: product.url -}}</h3>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {{ paginate | default_pagination }}
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "collection",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}
