@@ -1,3 +1,29 @@
-{% schema %}
+<section class="not-found">
+  <h1>Not Found</h1>
+</section>
 
+<style>
+  .not-found {
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .not-found h1 {
+    font-size: 100px;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "main-404",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Main 404"
+    }
+  ]
+}
 {% endschema %}
