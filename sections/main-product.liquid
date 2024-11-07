@@ -1,0 +1,61 @@
+<section class="product-main">
+  <div class="product-main-wrapper">
+    <div>
+      <img width="100%" height="auto" loading="lazy" src="{{ product.featured_image | image_url }}">
+    </div>
+    <div>
+      <h2>{{ product.title }}</h2>
+      <p>{{ product.price | money }}</p>
+      <p>{{ product.description }}</p>
+      <h3>Select Size</h3>
+      {% form 'product', product %}
+        <select name="id">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}">
+              {{ variant.title }}
+            </option>
+          {% endfor %}
+        </select>
+      {% endform %}
+      <button type="submit">Add to Cart</button>
+      <input type="submit" value="Add to cart">
+    </div>
+  </div>
+</section>
+
+<style>
+  .product-main {
+      background-color: {{ section.settings.background }};
+      color: {{ section.settings.text }};
+      padding: 10px;
+  }
+
+  .product-main-wrapper {
+    display: flex;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "main-product",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Product"
+    }
+  ]
+}
+{% endschema %}
