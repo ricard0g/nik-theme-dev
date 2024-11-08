@@ -5,19 +5,19 @@
         <p>Cart is Empty</p>
       </div>
     {% else %}
-      <div>
+      <div class="cart-items">
         {% for item in cart.items %}
-          <img width="100%" height="auto" loading="lazy" src="{{ item.image | image_url }}">
+          <img width="300" height="auto" loading="lazy" src="{{ item.image | image_url }}">
           <h2>{{ item.title }}</h2>
-          <p>{{ item.final_line_price | money }}</p>
+          <p>{{ item.final_price | money }}</p>
 
           <hr>
           <input name="updates[]" value="{{ item.quantity }}">
           <a href="{{ item.url_to_remove }}">Remove</a>
-          <p>Total: {{ cart.total_price | money }}</p>
         {% endfor %}
+        <p>Total: {{ cart.total_price | money }}</p>
         <button type="submit" name="update">Update</button>
-        <button type="submit" name="checkout">Checkout</button>
+        <button type="submit" name="checkout" value="checkout">Checkout</button>
       </div>
     {% endif %}
   </section>
@@ -30,8 +30,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      height: auto;
   }
+
+  .cart-items a {
+    margin-bottom: 2vh;
+    }
+
+  .cart-sec a, cart-sec img {
+    display: block;
+    }
 </style>
 
 {% schema %}
@@ -49,6 +58,11 @@
       "id": "text",
       "label": "Text Color",
       "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cart"
     }
   ]
 }

@@ -58,6 +58,10 @@ body {
     font-size: 0.875rem;
 }
 
+.middle-nav-bar li a:hover {
+	text-decoration: underline;
+}
+
 .right-nav-bar {
 	display: flex;
 	align-items: center;
